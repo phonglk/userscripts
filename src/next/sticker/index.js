@@ -1,5 +1,4 @@
 import { render, h } from 'preact';
-import $ from 'cash-dom';
 import './style.less';
 
 import SetList from './SetList';

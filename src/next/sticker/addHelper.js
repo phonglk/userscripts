@@ -1,4 +1,3 @@
-import $ from 'cash-dom';
 import { STICKER_SET_LIST_KEY } from './SetList';
 import * as store from 'common/store';
 import notify from 'common/noti5';
