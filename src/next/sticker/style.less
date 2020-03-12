@@ -1,0 +1,36 @@
+#ns {
+  margin-top: 10px;
+  a.button {
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 2px;
+    cursor: pointer;
+    min-width: auto;
+    border-radius: 0;
+  }
+  .btn-add {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .btn-sticker {
+    margin-left: 3px;
+  }
+  .sticker-wrapper {
+    background: white;
+    height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    transition: all 0.3s;
+  }
+  .sticker-img {
+    border: 1px solid transparent;
+    transition: all 0.3s;
+    cursor: pointer;
+    display: inline-block;
+    &:hover {
+      border: 1px solid rgba(0, 0, 0, 0.5);
+    }
+  }
+}

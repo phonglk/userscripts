@@ -1,0 +1,40 @@
+{
+  "name": "userscripts",
+  "version": "1.0.0",
+  "description": "Collection of my userscript",
+  "main": "index.js",
+  "repository": "https://github.com/phonglk/userscripts.git",
+  "scripts": {
+    "build": "npx webpack",
+    "build:dev": "NODE_ENV=development npx webpack --watch",
+    "start": "NODE_ENV=development LOCAL_DEV=1 npx webpack-dev-server",
+    "lint": "eslint src"
+  },
+  "author": "phonglk <phong.lekhoi@gmail.com>",
+  "license": "LICENSE",
+  "devDependencies": {
+    "eslint": "6.0.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-config-react": "^1.1.7",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-config-standard-preact": "^1.1.6",
+    "eslint-plugin-react": "^7.19.0",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3",
+    "webpack-userscript": "^2.5.1"
+  },
+  "dependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-react": "^7.8.3",
+    "babel": "^6.23.0",
+    "babel-loader": "^8.0.6",
+    "cash-dom": "^6.0.2",
+    "css-loader": "^3.4.2",
+    "less": "^3.11.1",
+    "less-loader": "^5.0.0",
+    "preact": "^10.3.4",
+    "style-loader": "^1.1.3"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Next Sticker Dev",
+  "namespace": "Next",
+  "version": "1.3.0",
+  "updateURL": "https://gist.githubusercontent.com/phonglk/915ecd87e1d14dfd25cecf6215571a9a/raw/next-sticker.user.js",
+  "description": "Add Sticker to your post",
+  "author": "greans@voz",
+  "match": "https://*.voz.vn/*",
+  "connect": "imgur.com",
+  "homepage": "https://next.voz.vn/threads/userscript-sticker-cho-next.854/",
+  "supportURL": "https://next.voz.vn/threads/userscript-sticker-cho-next.854/",
+  "source": "https://gist.github.com/phonglk/915ecd87e1d14dfd25cecf6215571a9a",
+  "grant": ["GM_getValue","GM_setValue", "GM_deleteValue",  "GM_listValues", "GM_notification" ,"GM_xmlhttpRequest", "GM_addValueChangeListener", "GM_removeValueChangeListener", "GM_log"],
+  "require": "https://cdn.jsdelivr.net/npm/cash-dom@6.0.2/dist/cash.min.js"
+}
