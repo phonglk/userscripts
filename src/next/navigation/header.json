@@ -1,7 +1,7 @@
 {
   "name": "Next Navigation",
   "namespace": "Next",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "updateURL": "https://raw.githubusercontent.com/phonglk/userscripts/master/dist/next-navigation.user.js",
   "description": "Add Navigation Helpers",
   "author": "Khoi-Phong Le",

@@ -10,8 +10,11 @@ if (!fs.existsSync(script)) {
   throw new Error(`Path ${script} is not existed`);
 }
 const dirname = path.dirname(script);
-const header = require(path.join(process.cwd(), dirname, './header.json'));
-
+const headers = require(path.join(process.cwd(), dirname, './header.json'));
+if (dev) {
+  headers.name += ' - Dev';
+  headers.version = `${headers.version}-t.[buildTime]`;
+}
 const outName = path.relative('./src', dirname).replace(/\//g, '-');
 
 module.exports = {
@@ -74,10 +77,7 @@ module.exports = {
       'process.env.CANDY': process.env.CANDY ? JSON.stringify(Buffer.from(process.env.CANDY).toString('base64')) : '',
     }),
     new WebpackUserscript({
-      headers: {
-        ...header,
-        version: dev ? `${header.version}-t.[buildTime]` : header.version
-      },
+      headers,
       proxyScript: {
         baseUrl: 'http://127.0.0.1:8080',
         filename: '[basename].proxy.user.js',

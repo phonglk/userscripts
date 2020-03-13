@@ -2,6 +2,8 @@ import { addExternalStyle } from 'common/util';
 import forumStructure from './forumStructure';
 import $ from 'cash-dom';
 
+window.__shared = { test: true }
+
 $(() => {
   onBoard();
   forumStructure();
@@ -33,7 +35,7 @@ function go(anchor) {
   anchor[0].click();
 }
 
-$(document).keydown(e => {
+$(document).on('keydown', e => {
   if (e.target.tagName == 'INPUT' || e.target.tagName == 'TEXTAREA') {
     return;
   }

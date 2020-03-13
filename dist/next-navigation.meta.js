@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Next Navigation
-// @version     1.0.3
+// @version     1.0.4
 // @author      Khoi-Phong Le
 // @description Add Navigation Helpers
 // @homepage    https://next.voz.vn/threads/userscript-sticker-cho-next.854/
