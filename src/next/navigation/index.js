@@ -62,12 +62,9 @@ $(document).keydown(e => {
   }
 });
 
-const defaultTooltipOption = {
-  'data-microtip-position': 'up'
-};
 function addTooltip($sel, text, options = {}) {
   $sel.attr({
-    ...defaultTooltipOption,
+    'data-microtip-position': 'up',
     ...options,
     'aria-label': text,
     'role': 'tooltip',
