@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": "https://github.com/phonglk/userscripts.git",
   "scripts": {
-    "build": "npx webpack",
+    "build": "webpack",
     "build:dev": "NODE_ENV=development npx webpack --watch",
     "start": "NODE_ENV=development LOCAL_DEV=1 npx webpack-dev-server",
     "lint": "eslint src"

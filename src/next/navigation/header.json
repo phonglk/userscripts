@@ -1,0 +1,15 @@
+{
+  "name": "Next Navigation",
+  "namespace": "Next",
+  "version": "1.0.0",
+  "updateURL": "https://github.com/phonglk/userscripts/raw/master/dist/next-navigation.user.js",
+  "description": "Add Navigation Helpers",
+  "author": "Khoi-Phong Le",
+  "match": "https://*.voz.vn/*",
+  "connect": "https://unpkg.com/microtip/microtip.css",
+  "homepage": "https://next.voz.vn/threads/userscript-sticker-cho-next.854/",
+  "supportURL": "https://github.com/phonglk/userscripts/pulls",
+  "source": "https://github.com/phonglk/userscripts/tree/master/src/next/sticker",
+  "grant": ["GM_getValue","GM_setValue", "GM_deleteValue",  "GM_listValues", "GM_notification" ,"GM_xmlhttpRequest", "GM_addValueChangeListener", "GM_removeValueChangeListener", "GM_log"],
+  "require": "https://cdn.jsdelivr.net/npm/cash-dom@6.0.2/dist/cash.min.js"
+}

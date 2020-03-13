@@ -27,6 +27,7 @@ module.exports = {
   resolve: {
     alias: {
       common: path.resolve(__dirname, './src/common'),
+      log: path.resolve(__dirname, './src/common/log'),
       react: 'preact/compat',
       'react-dom/test-utils': 'preact/test-utils',
       'react-dom': 'preact/compat'
@@ -70,7 +71,7 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.CANDY': JSON.stringify(Buffer.from(process.env.CANDY).toString('base64')),
+      'process.env.CANDY': process.env.CANDY ? JSON.stringify(Buffer.from(process.env.CANDY).toString('base64')) : '',
     }),
     new WebpackUserscript({
       headers: {
