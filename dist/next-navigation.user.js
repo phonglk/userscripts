@@ -7,7 +7,7 @@
 // @supportURL  https://github.com/phonglk/userscripts/pulls
 // @match       https://*.voz.vn/*
 // @namespace   Next
-// @updateURL   https://github.com/phonglk/userscripts/raw/master/dist/next-navigation.user.js
+// @updateURL   https://raw.githubusercontent.com/phonglk/userscripts/master/dist/next-navigation.user.js
 // @connect     https://unpkg.com/microtip/microtip.css
 // @source      https://github.com/phonglk/userscripts/tree/master/src/next/sticker
 // @grant       GM_getValue

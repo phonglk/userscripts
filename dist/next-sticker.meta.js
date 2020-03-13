@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name        Next Sticker
-// @version     1.3.0
+// @version     1.3.1
 // @author      Khoi-Phong Le
 // @description Add Sticker to your post
 // @homepage    https://next.voz.vn/threads/userscript-sticker-cho-next.854/
 // @supportURL  https://github.com/phonglk/userscripts/pulls
 // @match       https://*.voz.vn/*
 // @namespace   Next
-// @updateURL   https://github.com/phonglk/userscripts/raw/master/dist/next-sticker.user.js
+// @updateURL   https://raw.githubusercontent.com/phonglk/userscripts/master/dist/next-sticker.user.js
 // @connect     imgur.com
 // @source      https://github.com/phonglk/userscripts/tree/master/src/next/sticker
 // @grant       GM_getValue

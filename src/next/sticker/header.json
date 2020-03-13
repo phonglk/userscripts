@@ -1,8 +1,8 @@
 {
   "name": "Next Sticker",
   "namespace": "Next",
-  "version": "1.3.0",
-  "updateURL": "https://github.com/phonglk/userscripts/raw/master/dist/next-sticker.user.js",
+  "version": "1.3.1",
+  "updateURL": "https://raw.githubusercontent.com/phonglk/userscripts/master/dist/next-sticker.user.js",
   "description": "Add Sticker to your post",
   "author": "Khoi-Phong Le",
   "match": "https://*.voz.vn/*",
