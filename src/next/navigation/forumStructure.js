@@ -44,7 +44,7 @@ export default function addForumStructure() {
 }
 
 function addToHTML(structure) {
-  const $firstLi = $('.offCanvasMenu-list > li:first');
+  const $firstLi = $('.offCanvasMenu-list > li:first-child');
   const newHTML = (
     `<li id="next-navigation-structure">
       <div class="offCanvasMenu-linkHolder">
