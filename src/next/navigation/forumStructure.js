@@ -1,5 +1,6 @@
 import { request } from 'common/request';
 import { observeDOM } from 'common/util';
+import $ from 'cash-dom';
 import * as store from 'common/store';
 import log from 'log';
 

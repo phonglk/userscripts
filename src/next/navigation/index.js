@@ -1,5 +1,6 @@
 import { addExternalStyle } from 'common/util';
 import forumStructure from './forumStructure';
+import $ from 'cash-dom';
 
 $(() => {
   onBoard();

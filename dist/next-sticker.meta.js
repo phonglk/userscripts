@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Next Sticker
-// @version     1.3.1
+// @version     1.3.2
 // @author      Khoi-Phong Le
 // @description Add Sticker to your post
 // @homepage    https://next.voz.vn/threads/userscript-sticker-cho-next.854/

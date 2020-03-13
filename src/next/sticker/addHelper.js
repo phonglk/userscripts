@@ -1,6 +1,7 @@
 import { STICKER_SET_LIST_KEY } from './SetList';
 import * as store from 'common/store';
 import notify from 'common/noti5';
+import $ from 'cash-dom';
 
 export function detectImgurAlbum() {
   const IMGURL_PREFIX = '://imgur.com/a/';

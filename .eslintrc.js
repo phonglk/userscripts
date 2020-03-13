@@ -10,7 +10,6 @@ module.exports = {
   extends: ['eslint:recommended', 'prettier', 'standard-preact'],
   globals: {
     ...globVars,
-    '$': 'readonly',
     process: 'readonly',
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',

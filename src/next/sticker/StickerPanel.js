@@ -1,4 +1,5 @@
 import { h } from 'preact';
+import $ from 'cash-dom';
 import { useState, useEffect } from 'preact/hooks';
 import * as store from 'common/store';
 import { request } from 'common/request';
