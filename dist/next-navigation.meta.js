@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Next Navigation
-// @version     1.0.5
+// @version     1.0.6
 // @author      Khoi-Phong Le
 // @description Add Navigation Helpers
 // @homepage    https://next.voz.vn/threads/userscript-sticker-cho-next.854/
@@ -9,7 +9,7 @@
 // @namespace   Next
 // @updateURL   https://raw.githubusercontent.com/phonglk/userscripts/master/dist/next-navigation.user.js
 // @connect     https://unpkg.com/microtip/microtip.css
-// @source      https://github.com/phonglk/userscripts/tree/master/src/next/sticker
+// @source      https://github.com/phonglk/userscripts/tree/master/src/next/navigation
 // @grant       GM_getValue
 // @grant       GM_setValue
 // @grant       GM_deleteValue
