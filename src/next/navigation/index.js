@@ -1,8 +1,9 @@
 import { addExternalStyle } from 'common/util';
 import forumStructure from './forumStructure';
 import $ from 'cash-dom';
+import * as communicate from 'common/communicate';
 
-window.__shared = { test: true }
+communicate.set('next-navigation', true);
 
 $(() => {
   onBoard();
@@ -24,11 +25,21 @@ const ANCHOR = {
 };
 
 const goto = {
-  first: () => { go(ANCHOR.first()); },
-  last: () => { go(ANCHOR.last()); },
-  next: () => { go(ANCHOR.next()); },
-  prev: () => { go(ANCHOR.prev()); },
-  up: () => { go(ANCHOR.up()); },
+  first: () => {
+    go(ANCHOR.first());
+  },
+  last: () => {
+    go(ANCHOR.last());
+  },
+  next: () => {
+    go(ANCHOR.next());
+  },
+  prev: () => {
+    go(ANCHOR.prev());
+  },
+  up: () => {
+    go(ANCHOR.up());
+  },
 };
 
 function go(anchor) {
@@ -36,7 +47,11 @@ function go(anchor) {
 }
 
 $(document).on('keydown', e => {
-  if (e.target.tagName == 'INPUT' || e.target.tagName == 'TEXTAREA') {
+  if (
+    e.target.tagName == 'INPUT' ||
+    e.target.tagName == 'TEXTAREA' ||
+    e.target.matches('.message-editorWrapper *')
+  ) {
     return;
   }
 
@@ -70,14 +85,24 @@ function addTooltip($sel, text, options = {}) {
     'data-microtip-position': 'up',
     ...options,
     'aria-label': text,
-    'role': 'tooltip',
+    role: 'tooltip',
   });
 }
 
 function onBoard() {
-  addTooltip(ANCHOR.next(), 'Press -> to go to next page', {'data-microtip-position': 'right'});
-  addTooltip(ANCHOR.prev(), 'Press <- to go to previous page', {'data-microtip-position': 'bottom-right'});
-  addTooltip(ANCHOR.last(), 'Press Ctrl/Cmd + -> to go to last page', {'data-microtip-position': 'bottom-right'});
-  addTooltip(ANCHOR.first(), 'Press Ctrl/Cmd + <- to go to first page', {'data-microtip-position': 'bottom-right'});
-  addTooltip(ANCHOR.up(), 'Press Ctrl/Cmd + ⬆ to go to top', {'data-microtip-position': 'left'});
+  addTooltip(ANCHOR.next(), 'Press -> to go to next page', {
+    'data-microtip-position': 'right',
+  });
+  addTooltip(ANCHOR.prev(), 'Press <- to go to previous page', {
+    'data-microtip-position': 'bottom-right',
+  });
+  addTooltip(ANCHOR.last(), 'Press Ctrl/Cmd + -> to go to last page', {
+    'data-microtip-position': 'bottom-right',
+  });
+  addTooltip(ANCHOR.first(), 'Press Ctrl/Cmd + <- to go to first page', {
+    'data-microtip-position': 'bottom-right',
+  });
+  addTooltip(ANCHOR.up(), 'Press Ctrl/Cmd + ⬆ to go to top', {
+    'data-microtip-position': 'left',
+  });
 }
