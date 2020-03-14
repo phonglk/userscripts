@@ -1,4 +1,4 @@
-# Usercript Development Framework
+# Userscript Development Framework
 
 This framework allows you develop multiple powerful userscript by enabling es6 import/export, React, etc...
 
