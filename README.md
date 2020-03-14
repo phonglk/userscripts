@@ -1,8 +1,8 @@
-# Framework
+# Usercript Development Framework
 
 This framework allows you develop multiple powerful userscript by enabling es6 import/export, React, etc...
 
-The userscripts are structure as `src/{topic}/{script}/index.js` as `topic` is the collection of related userscripts, `index.js` is the entry point
+The userscripts are structured as `src/{topic}/{script}/index.js` as `topic` is the collection of related userscripts, `index.js` is the entry point
 
 Each script will be compiled as `{topic}-{script}.user.js` into `./dist` for distribution
 
