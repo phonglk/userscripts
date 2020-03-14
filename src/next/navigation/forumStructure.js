@@ -29,22 +29,26 @@ export default function addForumStructure() {
   if (structure === DEFAULT_STRUCTURE) {
     getStructure();
   }
-  addToHTML(structure);
-  store.onChange(addToHTML);
+  addToMobileNav(structure);
+  addToWebNav(structure);
+  store.onChange(STRUCTURE_KEY, () => {
+    addToMobileNav();
+    addToWebNav(structure);
+  });
   observeDOM(document.body, { childList: true }, (mutations) => {
     if ($('#next-navigation-structure').length > 0) return;
     mutations.forEach(mut => {
       mut.addedNodes.forEach(node => {
         if (node.classList.contains('offCanvasMenu--nav')) {
           const structure = store.get(STRUCTURE_KEY, DEFAULT_STRUCTURE);
-          addToHTML(structure);
+          addToMobileNav(structure);
         }
       });
     });
   });
 }
 
-function addToHTML(structure) {
+function addToMobileNav(structure) {
   const $firstLi = $('.offCanvasMenu-list > li:first-child');
   const newHTML = (
     `<li id="next-navigation-structure">
@@ -72,6 +76,47 @@ function addToHTML(structure) {
       </ul>
     </li>`
   );
+  $firstLi.replaceWith($(newHTML));
+}
+
+function addToWebNav(structure) {
+  const $firstLi = $('.p-nav-list li:first-child div');
+  const newHTML = `
+<div class="p-navEl" data-has-children="true">
+  <a href="/" class="p-navEl-link p-navEl-link--splitMenu " data-nav-id="home"
+    >Home</a
+  >
+  <a
+    data-xf-key="1"
+    data-xf-click="menu"
+    data-menu-pos-ref="< .p-navEl"
+    class="p-navEl-splitTrigger"
+    role="button"
+    tabindex="0"
+    aria-label="Toggle expanded"
+    aria-expanded="false"
+    aria-haspopup="true"
+  ></a>
+  <div class="menu menu--structural" data-menu="menu" aria-hidden="true">
+    <div class="menu-content">
+      ${structure.map(({ url, title, boxes }) => `
+        <a
+          href="${url}"
+          class="menu-linkRow u-indentDepth0 js-offCanvasCopy"
+          data-nav-id="${title}"
+          >${title}</a>
+        ${boxes.map(({ url, title }) => `<li>
+          <a
+            href="${url}"
+            class="menu-linkRow u-indentDepth1 js-offCanvasCopy"
+            data-nav-id="${title}"
+            >${title}</a>
+        </li>`).join('\n')}
+      `).join('\n')}
+    </div>
+  </div>
+</div>
+  `;
   $firstLi.replaceWith($(newHTML));
 }
 

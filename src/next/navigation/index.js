@@ -52,7 +52,8 @@ $(document).on('keydown', e => {
   if (
     e.target.tagName == 'INPUT' ||
     e.target.tagName == 'TEXTAREA' ||
-    e.target.matches('.message-editorWrapper *')
+    e.target.matches('.message-editorWrapper *') ||
+    e.target.matches('.message-cell.message-cell--main.is-editing * ')
   ) {
     return;
   }
