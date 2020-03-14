@@ -3,6 +3,9 @@ import forumStructure from './forumStructure';
 import addGoBack from './goBack';
 import $ from 'cash-dom';
 import * as communicate from 'common/communicate';
+import navBar from './navBar';
+
+import './style.less';
 
 communicate.set('next-navigation', true);
 
@@ -11,6 +14,7 @@ $(() => {
   forumStructure();
   addExternalStyle('https://unpkg.com/microtip/microtip.css');
   addGoBack();
+  navBar();
 });
 
 const ARROW_KEY = {

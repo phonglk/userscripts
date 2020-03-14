@@ -39,7 +39,7 @@ export default function addForumStructure() {
     if ($('#next-navigation-structure').length > 0) return;
     mutations.forEach(mut => {
       mut.addedNodes.forEach(node => {
-        if (node.classList.contains('offCanvasMenu--nav')) {
+        if (node.classList && node.classList.contains('offCanvasMenu--nav')) {
           const structure = store.get(STRUCTURE_KEY, DEFAULT_STRUCTURE);
           addToMobileNav(structure);
         }

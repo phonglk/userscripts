@@ -1,0 +1,29 @@
+.p-body {
+  @media (max-width: 768px) {
+    padding-top: 30px;
+  }
+}
+
+.next-navigation {
+  width: 100%;
+  height: 30px;
+  position: fixed;
+  left: 0;
+  top: 50px;
+  background: #303e4c;
+  .pageNavSimple {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    & > a {
+      flex: 1 1 auto;
+      margin: 0;
+      padding: 2px 3px;
+      min-width: auto;
+      height: 100%;
+      background: none;
+      color: white;
+    }
+  }
+}
