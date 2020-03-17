@@ -21,7 +21,7 @@ export default function SetList() {
     selectStickerSet(url);
   };
 
-  const selectStickerSet = (url) => {
+  const selectStickerSet = url => {
     setSelectedSS(url);
     store.set(SELECTED_SS_KEY, url);
   };
@@ -43,8 +43,24 @@ export default function SetList() {
 
   return (
     <div>
-      <a className='btn-add button button--primary' onClick={addStickerSet}>
-        ADD STICKER
+      <a
+        className='button'
+        href='https://next.voz.vn/threads/tap-hop-userscript-huu-dung-cho-next-sticker-navigation.854/#post-39483'
+        target='_blank'
+        aria-label='Sticker Collection'
+        role='tooltip'
+        data-microtip-position='bottom-left'
+      >
+        Stickers
+      </a>
+      <a
+        className='btn-add button button--primary'
+        onClick={addStickerSet}
+        aria-label='Add Sticker by Imgur URL/ID'
+        role='tooltip'
+        data-microtip-position='bottom-left'
+      >
+        Add Sticker
       </a>
       <span className='ss-list'>
         {stickerSets.map(({ url, name }) => {

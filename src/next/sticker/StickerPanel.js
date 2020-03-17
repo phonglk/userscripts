@@ -12,8 +12,9 @@ const GET_SET_KEY = url => `sticker_set_${url}`;
 export default function StickerPanel() {
   const [isLoading, setIsLoading] = useState(true);
   const [stickerList, setStickerList] = useState([]);
-  const [selectedSS, setSelectedSS] = useState(store.get(SELECTED_SS_KEY, null));
-
+  const [selectedSS, setSelectedSS] = useState(
+    store.get(SELECTED_SS_KEY, null)
+  );
 
   useEffect(() => {
     store.onChange(SELECTED_SS_KEY, (url, isRemote) => {
@@ -55,13 +56,21 @@ export default function StickerPanel() {
 
   const deleteStickerSet = async () => {
     store.del(GET_SET_KEY(selectedSS));
-    store.update(STICKER_SET_LIST_KEY, [], list => list.filter(({ url }) => url !== selectedSS));
+    store.update(STICKER_SET_LIST_KEY, [], list =>
+      list.filter(({ url }) => url !== selectedSS)
+    );
   };
 
   return (
     <div className='sticker-panel'>
       <div className='sticker-panel-toolbar'>
-        <a className='button btn-delete' onClick={deleteStickerSet}>
+        <a
+          className='button btn-delete'
+          onClick={deleteStickerSet}
+          aria-label='Delete current sticker set'
+          role='tooltip'
+          data-microtip-position='right'
+        >
           Delete
         </a>
       </div>
