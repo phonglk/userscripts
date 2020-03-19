@@ -56,9 +56,9 @@ export default function StickerPanel() {
 
   const deleteStickerSet = async () => {
     store.del(GET_SET_KEY(selectedSS));
-    store.update(STICKER_SET_LIST_KEY, [], list => {
-      list.filter(({ url }) => url !== selectedSS);
-    });
+    store.update(STICKER_SET_LIST_KEY, [], list =>
+      list.filter(({ url }) => url !== selectedSS)
+    );
   };
 
   return (
@@ -85,16 +85,7 @@ export default function StickerPanel() {
 
 function insertStickerImg(url) {
   const sel = window.getSelection();
-  let img = $(`<img src="${url}" />`)[0];
-  if (!url.startsWith('http')) {
-    const fileName = url.split('/').slice(-1)[0];
-    img = $(
-      `<img src="${url}" class="smilie fr-fic fr-dii" alt=":${fileName.substring(
-        0,
-        fileName.lastIndexOf('.')
-      )}:"/>`
-    )[0];
-  }
+  const img = $(`<img src="${url}" />`)[0];
   const target = $('div.fr-view[contenteditable=true] > *');
   const node =
     sel.anchorNode.nodeType === 3
@@ -117,73 +108,8 @@ function insertStickerImg(url) {
 async function loadSticker(url) {
   let stickerList = store.get(GET_SET_KEY(url), null);
   if (stickerList === null) {
-    if (url.toUpperCase() === 'defaultEmo'.toUpperCase()) {
-      let EMO_DEFAULT_URLS = [
-        'adore.png',
-        'after_boom.png',
-        'ah.png',
-        'amazed.png',
-        'angry.png',
-        'bad_smelly.png',
-        'baffle.png',
-        'beat_brick.png',
-        'beat_plaster.png',
-        'beat_shot.png',
-        'beated.png',
-        'beauty.png',
-        'big_smile.png',
-        'boss.png',
-        'burn_joss_stick.png',
-        'byebye.png',
-        'canny.png',
-        'choler.png',
-        'cold.png',
-        'confident.png',
-        'confuse.png',
-        'cool.png',
-        'cry.png',
-        'doubt.png',
-        'dribble.png',
-        'embarrassed.png',
-        'extreme_sexy_girl.png',
-        'feel_good.png',
-        'go.png',
-        'haha.png',
-        'hell_boy.png',
-        'hungry.png',
-        'look_down.png',
-        'matrix.png',
-        'misdoubt.png',
-        'nosebleed.png',
-        'oh.png',
-        'ops.png',
-        'pudency.png',
-        'rap.png',
-        'sad.png',
-        'sexy_girl.png',
-        'shame.png',
-        'smile.png',
-        'spiderman.png',
-        'still_dreaming.png',
-        'sure.png',
-        'surrender.png',
-        'sweat.png',
-        'sweet_kiss.png',
-        'tire.png',
-        'too_sad.png',
-        'waaaht.png',
-        'what.png',
-      ];
-      EMO_DEFAULT_URLS = EMO_DEFAULT_URLS.map(
-        x => (x = `/styles/next/xenforo/smilies/popopo/${x}`)
-      );
-      stickerList = EMO_DEFAULT_URLS;
-      store.set(GET_SET_KEY(url), stickerList);
-      return stickerList;
-    } else {
-      const id = url.match(/a\/([^ ]*)/)[1];
-      stickerList = await loadImgurStickers(id);
-    }
+    const id = url.match(/a\/([^ ]*)/)[1];
+    stickerList = await loadImgurStickers(id);
     store.set(GET_SET_KEY(url), stickerList);
   }
   return stickerList;

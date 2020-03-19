@@ -13,15 +13,6 @@ export default function SetList() {
     store.get(SELECTED_SS_KEY, null)
   );
 
-  if (stickerSets && !stickerSets.some(x => x.url === 'defaultEmo')) {
-    store.update(STICKER_SET_LIST_KEY, [], latest =>
-      latest.concat({
-        url: 'defaultEmo',
-        name: 'popo Default',
-      })
-    );
-  }
-
   const addStickerSet = () => {
     const { url, name } = addStickerPrompt();
     store.update(STICKER_SET_LIST_KEY, [], latest =>
