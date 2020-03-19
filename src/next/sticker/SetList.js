@@ -1,6 +1,8 @@
 import { h } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
 import * as store from 'common/store';
+import { setDefaultStickers } from './defaultStickers';
+import { GET_SET_KEY } from './StickerPanel';
 
 export const STICKER_SET_LIST_KEY = 'sticker_set_list';
 export const SELECTED_SS_KEY = 'selected_sticker_set';
@@ -31,6 +33,7 @@ export default function SetList() {
     store.onChange(SELECTED_SS_KEY, (val, isRemote) => {
       if (!isRemote) setSelectedSS(val);
     });
+    setDefaultStickers(store, STICKER_SET_LIST_KEY, GET_SET_KEY);
   }, []);
 
   useEffect(() => {

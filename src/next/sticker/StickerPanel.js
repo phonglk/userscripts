@@ -3,11 +3,12 @@ import $ from 'cash-dom';
 import { useState, useEffect } from 'preact/hooks';
 import * as store from 'common/store';
 import { request } from 'common/request';
+import { massageStickerOutput } from './defaultStickers';
 
 import { SELECTED_SS_KEY, STICKER_SET_LIST_KEY } from './SetList';
 
 const candy = atob(process.env.CANDY);
-const GET_SET_KEY = url => `sticker_set_${url}`;
+export const GET_SET_KEY = url => `sticker_set_${url}`;
 
 export default function StickerPanel() {
   const [isLoading, setIsLoading] = useState(true);
@@ -85,7 +86,8 @@ export default function StickerPanel() {
 
 function insertStickerImg(url) {
   const sel = window.getSelection();
-  const img = $(`<img src="${url}" />`)[0];
+  let img = $(`<img src="${url}" />`)[0];
+  img = massageStickerOutput(img, url);
   const target = $('div.fr-view[contenteditable=true] > *');
   const node =
     sel.anchorNode.nodeType === 3

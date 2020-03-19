@@ -6,7 +6,7 @@ import addGoBack from '../navigation/goBack';
 import navBar from '../navigation/navBar';
 
 import '../sticker/index.js';
-import '../navigation/style.less'
+import '../navigation/style.less';
 $(() => {
   addExternalStyle('https://unpkg.com/microtip/microtip.css');
   // navigation
