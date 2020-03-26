@@ -15,3 +15,7 @@ $(() => {
   addGoBack();
   navBar();
 });
+/** TODO
+ * Bookmark threads
+ * Upload image
+ */

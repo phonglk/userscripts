@@ -59,7 +59,7 @@ const DEFAULT_STICKERS = {
     'what.png',
   ].map(file => `${DEFAULT_POPO_PREFIX}${file}`),
   'Vozer Popo': 'https://imgur.com/a/0sWVa',
-  'Pepe': 'https://imgur.com/a/PyAepyl',
+  'Pepe': 'https://imgur.com/a/pJX70wR',
 };
 
 export function setDefaultStickers(store, LIST_KEY, GET_SET_KEY) {
