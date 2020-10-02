@@ -1,7 +1,7 @@
 {
   "name": "Next Living",
   "namespace": "Next",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "updateURL": "https://raw.githubusercontent.com/phonglk/userscripts/master/dist/next-living.user.js",
   "description": "theNextLiving",
   "author": "Khoi-Phong Le",

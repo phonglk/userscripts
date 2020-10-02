@@ -3,7 +3,9 @@ import SetList from './SetList';
 import StickerPanel from './StickerPanel';
 import $ from 'cash-dom';
 const CONTAINER_ID = 'ns';
-const BEFORE_SELECTOR = '.js-previewContainer';
+const BEFORE_SELECTOR = $('.js-previewContainer').length
+  ? '.js-previewContainer'
+  : '.message-editorWrapper .formButtonGroup';
 
 import './style.less';
 
@@ -18,7 +20,7 @@ function getDom() {
   let ele = $(`#${CONTAINER_ID}`);
   if (ele.length > 0) return ele[0];
   ele = $(`<div id="${CONTAINER_ID}"></div>`);
-  ele.insertBefore('.js-previewContainer');
+  ele.insertBefore(BEFORE_SELECTOR);
   return ele[0];
 }
 

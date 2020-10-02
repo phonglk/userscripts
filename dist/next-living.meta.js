@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Next Living
-// @version     1.1.1
+// @version     1.2.0
 // @author      Khoi-Phong Le
 // @description theNextLiving
 // @homepage    https://next.voz.vn/threads/userscript-sticker-cho-next.854/
