@@ -14,9 +14,18 @@ export function detectImgurAlbum() {
     const textNode = node.previousSibling;
     const text = textNode.textContent;
     if (text.length > 20) return;
+
     const addBtn = $(`<a class="button button--link">Add Sticker ${text}</a>`);
     $(textNode).replaceWith(addBtn);
-    addBtn.on('click', () => addStickerFromPage(url.trim(), text.trim()));
+    addBtn.on('click', () => {
+      let name = text.trim();
+      if (name.length === 0) name = prompt('What should be the name for this sticket set', url.match(/[^/]*$/));
+      if (!name) {
+        notify({ text: `The action is canceled`, title: 'Add Sticker', timeout: 4000 });
+        return;
+      }
+      addStickerFromPage(url.trim(), name)
+    });
   });
 }
 function addStickerFromPage(url, name) {

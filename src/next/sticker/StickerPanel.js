@@ -62,6 +62,19 @@ export default function StickerPanel() {
     );
   };
 
+  
+  const renameStickerSet = async () => {
+    console.log(selectedSS)
+    const name = prompt('What is the new name of this sticker set?', selectedSS.match(/[^/]*$/))
+    if (!name.trim()) return;
+    store.update(STICKER_SET_LIST_KEY, [], list =>
+      list.map(stks => {
+        if (stks.url !== selectedSS) return stks;
+        return {...stks, name }
+      })
+    );
+  };
+
   return (
     <div className='sticker-panel'>
       <div className='sticker-panel-toolbar'>
@@ -73,6 +86,15 @@ export default function StickerPanel() {
           data-microtip-position='right'
         >
           Delete
+        </a>
+        <a
+          className='button btn-rename'
+          onClick={renameStickerSet}
+          aria-label='Change name of current sticker set'
+          role='tooltip'
+          data-microtip-position='right'
+        >
+          Rename
         </a>
       </div>
       {isLoading && 'Loading sticker ...'}
