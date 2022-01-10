@@ -1,0 +1,13 @@
+{
+  "name": "Capital Match Upcoming Payment",
+  "namespace": "Capital Match",
+  "version": "1.5.1",
+  "updateURL": "https://raw.githubusercontent.com/phonglk/userscripts/master/dist/capital-match-upcoming-payment.user.js",
+  "description": "Understand you cashflow upcoming months",
+  "author": "Khoi-Phong Le",
+  "match": "https://lending.capital-match.com/api/investors/*",
+  "supportURL": "https://github.com/phonglk/userscripts/pulls",
+  "source": "https://github.com/phonglk/userscripts/tree/master/src/capital-match/upcoming-payment",
+  "grant": ["GM_getValue","GM_setValue", "GM_deleteValue",  "GM_listValues", "GM_notification" ,"GM_xmlhttpRequest", "GM_addValueChangeListener", "GM_removeValueChangeListener", "GM_log"],
+  "require": "https://cdn.jsdelivr.net/npm/cash-dom@6.0.2/dist/cash.min.js"
+}
