@@ -7,7 +7,6 @@
   "author": "Khoi-Phong Le",
   "match": "https://*.voz.vn/*",
   "connect": "imgur.com",
-  "homepage": "https://next.voz.vn/threads/userscript-sticker-cho-next.854/",
   "supportURL": "https://github.com/phonglk/userscripts/pulls",
   "source": "https://github.com/phonglk/userscripts/tree/master/src/next/living",
   "grant": ["GM_getValue","GM_setValue", "GM_deleteValue",  "GM_listValues", "GM_notification" ,"GM_xmlhttpRequest", "GM_addValueChangeListener", "GM_removeValueChangeListener", "GM_log"]

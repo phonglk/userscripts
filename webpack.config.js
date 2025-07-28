@@ -2,7 +2,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const fs = require('fs');
-const WebpackUserscript = require('webpack-userscript');
+const { UserscriptPlugin } = require('webpack-userscript');
 const dev = process.env.NODE_ENV === 'development';
 
 const script = process.env.SCRIPT;
@@ -25,7 +25,9 @@ module.exports = {
     filename: `${outName}.user.js`
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist')
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
   },
   resolve: {
     alias: {
@@ -76,13 +78,12 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.CANDY': process.env.CANDY ? JSON.stringify(Buffer.from(process.env.CANDY).toString('base64')) : '',
     }),
-    new WebpackUserscript({
+    new UserscriptPlugin({
       headers,
       proxyScript: {
-        baseUrl: 'http://127.0.0.1:8080',
+        baseURL: 'http://127.0.0.1:8080',
         filename: '[basename].proxy.user.js',
-        enable: () => process.env.LOCAL_DEV === '1'
-      }
+      },
     })
   ]
 };
