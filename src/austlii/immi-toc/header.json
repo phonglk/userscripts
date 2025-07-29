@@ -1,0 +1,13 @@
+{
+  "name": "AustLII - Immigration Law TOC support",
+  "namespace": "austlii",
+  "version": "1.0.0",
+  "updateURL": "https://raw.githubusercontent.com/phonglk/userscripts/master/dist/austlii-immi-toc.user.js",
+  "description": "Add TOC to Schedule 2 of immi regulation",
+  "author": "Khoi-Phong Le",
+  "match": "https://www.austlii.edu.au/*",
+  "supportURL": "https://github.com/phonglk/userscripts/pulls",
+  "source": "https://github.com/phonglk/userscripts/tree/master/src/austlii/immi-toc",
+  "grant": ["GM_getValue","GM_setValue", "GM_deleteValue",  "GM_listValues", "GM_notification" ,"GM_xmlhttpRequest", "GM_addValueChangeListener", "GM_removeValueChangeListener", "GM_log"],
+  "require": "https://cdn.jsdelivr.net/npm/cash-dom@6.0.2/dist/cash.min.js"
+}

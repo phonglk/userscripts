@@ -1,0 +1,127 @@
+// Styling for the TOC container with Affix support
+#austlii-helper-toc {
+  // Ensure the TOC appears in the correct position
+  margin: 10px 0;
+  
+  // Override any conflicting styles from the host page
+  .ant-card {
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    
+    // When affixed (sticky), add more prominent shadow
+    &.ant-affix {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      border-color: #1890ff;
+    }
+  }
+  
+  // Ensure proper spacing in the sidebar
+  .ant-card-body {
+    padding: 12px;
+  }
+  
+  // Affix component styling
+  .ant-affix {
+    position: sticky;
+    top: 20px;
+    z-index: 1000;
+    
+    // Smooth transition when becoming sticky
+    transition: all 0.3s ease;
+    
+    // Ensure it doesn't overflow the viewport
+    max-height: calc(100vh - 40px);
+    overflow: hidden;
+  }
+  
+  // Ensure the TOC content is scrollable when sticky
+  .ant-card-body {
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    
+    // Custom scrollbar styling
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 3px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: #c1c1c1;
+      border-radius: 3px;
+      
+      &:hover {
+        background: #a8a8a8;
+      }
+    }
+  }
+
+  // TOC Card styling
+  .toc-card {
+    max-height: calc(100vh - 100px);
+    overflow: hidden;
+    
+    .ant-card-body {
+      padding: 12px;
+      max-height: calc(100vh - 160px);
+      overflow-y: auto;
+    }
+    
+    // Card header styling to keep search fixed
+    .ant-card-head {
+      background: #fafafa;
+      border-bottom: 1px solid #f0f0f0;
+      padding: 12px 16px;
+      
+      .ant-card-head-title {
+        padding: 0;
+      }
+    }
+  }
+
+  // Search container styling
+  .toc-search-container {
+    // Clear button styling
+  }
+
+  // TOC Collapse styling
+  .toc-collapse {
+    background: transparent;
+  }
+
+  // Leaf item styling (items without children)
+  .toc-leaf-item {
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-bottom: 4px;
+    background-color: #fafafa;
+    border: 1px solid #f0f0f0;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      background-color: #f5f5f5;
+      border-color: #d9d9d9;
+    }
+    
+    &:active {
+      background-color: #e6f7ff;
+      border-color: #1890ff;
+    }
+  }
+
+  // Collapsible label styling
+  .toc-collapsible-label {
+    cursor: pointer;
+    transition: color 0.2s ease;
+    
+    &:hover {
+      color: #1890ff;
+    }
+  }
+} 

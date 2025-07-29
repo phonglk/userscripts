@@ -7,34 +7,38 @@
   "scripts": {
     "build": "webpack",
     "build:dev": "NODE_ENV=development npx webpack --watch",
+    "build:austlii": "SCRIPT=./src/austlii/immi-toc/index.js webpack",
+    "build:austlii:dev": "SCRIPT=./src/austlii/immi-toc/index.js yarn start",
     "start": "NODE_ENV=development LOCAL_DEV=1 npx webpack-dev-server",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "author": "phonglk <phong.lekhoi@gmail.com>",
-  "license": "LICENSE",
+  "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "@babel/preset-react": "^7.27.1",
+    "babel-loader": "^10.0.0",
+    "css-loader": "^7.1.2",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-config-react": "^1.1.7",
-    "eslint-config-standard": "^17.1.0",
-    "eslint-config-standard-preact": "^1.1.6",
     "eslint-plugin-react": "^7.37.5",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "less": "^4.4.0",
+    "less-loader": "^12.3.0",
+    "style-loader": "^4.0.0",
     "webpack": "^5.101.0",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.2",
     "webpack-userscript": "^3.2.3"
   },
   "dependencies": {
-    "@babel/core": "^7.28.0",
-    "@babel/preset-env": "^7.28.0",
-    "@babel/preset-react": "^7.27.1",
-    "babel": "^6.23.0",
-    "babel-loader": "^10.0.0",
+    "antd": "^5.26.6",
     "cash-dom": "^8.1.5",
-    "css-loader": "^7.1.2",
-    "less": "^4.4.0",
-    "less-loader": "^12.3.0",
     "preact": "^10.26.9",
-    "style-loader": "^4.0.0"
+    "react-sticky-box": "^2.0.5"
   }
 }
